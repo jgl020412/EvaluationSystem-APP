@@ -1,10 +1,10 @@
 package com.evaluation.evaluation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.evaluation.evaluation.base.BaseActivity
 import com.evaluation.evaluation.databinding.ActivityWelcomeBinding
-import com.evaluation.evaluation.home.HomeActivity
+import com.evaluation.evaluation.main.MainActivity
 import com.evaluation.evaluation.login.LoginActivity
 import com.evaluation.evaluation.util.Constants
 import com.evaluation.evaluation.util.SharedPreferenceHelper
@@ -27,15 +27,16 @@ class WelcomeActivity : BaseActivity() {
     }
 
     fun jump() {
-        Thread {
-            Thread.sleep(2000)
-            if (isLogin) {
-                HomeActivity.actionStart(this)
-            } else {
-                LoginActivity.actionStart(this)
-            }
-            finish()
-        }.start()
+        MainActivity.actionStart(this)
+//        Thread {
+//            Thread.sleep(2000)
+//            if (isLogin) {
+//                MainActivity.actionStart(this)
+//            } else {
+//                LoginActivity.actionStart(this)
+//            }
+//            finish()
+//        }.start()
     }
 
 }

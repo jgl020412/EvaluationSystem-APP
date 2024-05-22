@@ -1,24 +1,25 @@
-package com.evaluation.evaluation.home
+package com.evaluation.evaluation.main
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.evaluation.evaluation.base.BaseActivity
-import com.evaluation.evaluation.databinding.ActivityHomeBinding
+import com.evaluation.evaluation.databinding.ActivityMainBinding
 
-class HomeActivity: BaseActivity() {
+class MainActivity: BaseActivity() {
 
-    private lateinit var binding: ActivityHomeBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.mainView.init(supportFragmentManager)
         setContentView(binding.root)
     }
 
     companion object {
         fun actionStart(context: Context) {
-            val intent = Intent(context, HomeActivity::class.java)
+            val intent = Intent(context, MainActivity::class.java)
             context.startActivity(intent)
         }
     }

@@ -4,5 +4,11 @@
     <string name="login_verification_hint">请输入验证码</string>
     <string name="login_button">登录/注册</string>
     <string name="login_btn_verification">获取验证码</string>
+    <string name="bottom_mine">我的</string>
+    <string name="bottom_my_evaluation">我的评价</string>
+    <string name="bottom_all_evaluation">所有评价</string>
+    <string name="bottom_service">服务</string>
+    <string name="description_img_back">返回键</string>
+    <string name="description_img_right">搜索键</string>
 
 </resources>
