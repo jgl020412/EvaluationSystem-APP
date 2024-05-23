@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.eval.EvaluationFragment
 import com.evaluation.evaluation.eval.my.MyEvaluationFragment
+import com.evaluation.evaluation.profile.UserFragment
 import com.evaluation.evaluation.service.ServiceFragment
 
 abstract class BaseMainBottomTabWidget(
@@ -76,13 +77,14 @@ abstract class BaseMainBottomTabWidget(
     private val serviceFragment: ServiceFragment by lazy { ServiceFragment.newInstance() }
     private val allEvaluation: EvaluationFragment by lazy { EvaluationFragment.newInstance() }
     private val myEvaluation: MyEvaluationFragment by lazy { MyEvaluationFragment.newInstance() }
+    private val userFragment: UserFragment by lazy { UserFragment.newInstance() }
 
     private fun getCurrentFragment(index: Int): Fragment {
         return when (index) {
             0 -> serviceFragment
             1 -> allEvaluation
             2 -> myEvaluation
-            3 -> ServiceFragment()
+            3 -> userFragment
             else -> serviceFragment
         }
     }

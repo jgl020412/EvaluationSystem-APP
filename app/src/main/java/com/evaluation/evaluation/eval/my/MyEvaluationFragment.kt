@@ -18,14 +18,14 @@ class MyEvaluationFragment: Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentEvaluationBinding.inflate(inflater, container, false)
         initView()
         return binding.root
     }
 
     private fun initView() {
-        val evaluationAdapter = EvaluationAdapter(testInitEvaluationList())
+        val evaluationAdapter = MyEvaluationAdapter(testInitEvaluationList())
         val evaluationRecyclerView = binding.evaluationRecyclerView
         evaluationRecyclerView.adapter = evaluationAdapter
         evaluationRecyclerView.layoutManager = LinearLayoutManager(context)

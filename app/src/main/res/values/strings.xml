@@ -10,5 +10,7 @@
     <string name="bottom_service">服务</string>
     <string name="description_img_back">返回键</string>
     <string name="description_img_right">搜索键</string>
+    <string name="logout">退出登录</string>
+    <string name="update_info">修改信息</string>
 
 </resources>
