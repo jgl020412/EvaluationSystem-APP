@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.database.entity.Service
-import com.evaluation.evaluation.databinding.AdapterServiceBinding
 
 class ServiceAdapter(val serviceList: List<Service>) :
     RecyclerView.Adapter<ServiceAdapter.ViewHolder>() {

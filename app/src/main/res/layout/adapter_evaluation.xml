@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/evaluationLlItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dp_10"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@drawable/evaluation_list_bg"
+    android:padding="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/evaluationTvUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/sp_13"
+        tools:text="用户" />
+
+    <TextView
+        android:id="@+id/evaluationTvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="@dimen/dp_5"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/sp_13"
+        tools:ignore="RelativeOverlap"
+        tools:text="发布时间" />
+
+    <LinearLayout
+        android:id="@+id/serviceLlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/evaluationTvUser"
+        android:layout_marginTop="@dimen/dp_4"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <TextView
+            android:id="@+id/serviceTvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/sp_25"
+            android:textStyle="bold"
+            tools:text="服务名称" />
+
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/serviceLlTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_8"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="3" />
+
+</RelativeLayout>
+
