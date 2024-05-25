@@ -18,5 +18,8 @@
     <string name="birthdayTitle">生日</string>
     <string name="emailTitle">邮箱</string>
     <string name="idTitle">身份证号</string>
+    <string name="welcomeTittle">政务服务好差评系统</string>
+    <string name="welcomeGreeting">欢迎使用</string>
+    <string name="welcomePrompt"><![CDATA[“恶语伤人三春寒，良言一句暖三冬”]]></string>
 
 </resources>

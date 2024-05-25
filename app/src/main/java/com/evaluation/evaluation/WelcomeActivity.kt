@@ -27,16 +27,15 @@ class WelcomeActivity : BaseActivity() {
     }
 
     fun jump() {
-        MainActivity.actionStart(this)
-//        Thread {
-//            Thread.sleep(2000)
-//            if (isLogin) {
-//                MainActivity.actionStart(this)
-//            } else {
-//                LoginActivity.actionStart(this)
-//            }
-//            finish()
-//        }.start()
+        Thread {
+            Thread.sleep(2000)
+            if (isLogin) {
+                MainActivity.actionStart(this)
+            } else {
+                LoginActivity.actionStart(this)
+            }
+            finish()
+        }.start()
     }
 
 }
