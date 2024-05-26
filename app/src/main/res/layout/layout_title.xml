@@ -24,6 +24,8 @@
         android:paddingVertical="@dimen/dp_8"
         android:visibility="gone"
         tools:ignore="RtlHardcoded"
+        android:src="@drawable/ic_shortcut_search"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/description_img_right" />
 
     <TextView

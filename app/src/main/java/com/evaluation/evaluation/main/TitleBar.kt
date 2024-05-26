@@ -75,14 +75,15 @@ class TitleBar @JvmOverloads constructor(
     }
 
     /**
-     * 设置右边图片
+     * 显示搜索键
      *
      * @param imageId 图片id
      */
-    fun setRightImage(imageId: Int) {
-        if (imageId != 0) {
+    fun setRightImage(isVisible: Boolean) {
+        if (isVisible) {
             mImgRight.visibility = View.VISIBLE
-            mImgRight.setImageResource(imageId)
+        } else {
+            mImgRight.visibility = View.GONE
         }
     }
 

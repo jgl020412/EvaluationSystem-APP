@@ -28,6 +28,7 @@ class ServiceFragment: Fragment() {
         binding.serviceRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.serviceRecyclerView.adapter = serviceAdapter
         binding.serviceListBar.setBackImageVisible(false)
+        binding.serviceListBar.setRightImage(true)
         binding.serviceListBar.setTitle("服务")
     }
 

@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.evaluation.evaluation.main.MainBottomTabWidget
         android:id="@+id/mainView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <com.evaluation.evaluation.main.floating.FloatingButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/dp_88"
+        android:layout_marginEnd="@dimen/dp_18"
+        android:src="@drawable/ic_shortcut_add_circle_outline"
+        app:maxImageSize="@dimen/dp_60" />
 
 </FrameLayout>

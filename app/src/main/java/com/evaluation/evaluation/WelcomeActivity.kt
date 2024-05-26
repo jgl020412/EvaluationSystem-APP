@@ -36,6 +36,7 @@ class WelcomeActivity : BaseActivity() {
             }
             finish()
         }.start()
+        finish()
     }
 
 }
