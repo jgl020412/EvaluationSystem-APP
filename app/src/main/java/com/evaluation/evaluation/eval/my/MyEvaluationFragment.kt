@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.evaluation.evaluation.database.pojo.Evaluation
+import com.evaluation.evaluation.model.pojo.Evaluation
 import com.evaluation.evaluation.databinding.FragmentEvaluationBinding
-import com.evaluation.evaluation.eval.EvaluationAdapter
 
 class MyEvaluationFragment: Fragment() {
 

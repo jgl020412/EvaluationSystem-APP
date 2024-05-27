@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.evaluation.evaluation.database.entity.Service
+import com.evaluation.evaluation.model.entity.Service
 import com.evaluation.evaluation.databinding.FragmentServiceBinding
 
 class ServiceFragment: Fragment() {

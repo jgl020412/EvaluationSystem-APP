@@ -1,4 +1,4 @@
-package com.evaluation.evaluation.database.pojo
+package com.evaluation.evaluation.model.pojo
 
 data class User(
     val id: String,

@@ -5,13 +5,11 @@ import android.graphics.PorterDuff
 import android.graphics.drawable.LayerDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.evaluation.evaluation.App.Companion.context
 import com.evaluation.evaluation.R
-import com.evaluation.evaluation.database.pojo.Evaluation
+import com.evaluation.evaluation.model.pojo.Evaluation
 import com.evaluation.evaluation.databinding.AdapterEvaluationBinding
 
 class MyEvaluationAdapter(private val evaluationList: List<Evaluation>) :

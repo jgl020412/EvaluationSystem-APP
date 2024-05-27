@@ -10,7 +10,7 @@ import com.evaluation.evaluation.R
 import com.evaluation.evaluation.base.BaseActivity
 import com.evaluation.evaluation.databinding.ActivityLoginBinding
 
-class LoginActivity : BaseActivity(), View.OnClickListener{
+class LoginActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityLoginBinding
     private var countDownTimer: CountDownTimer? = null
@@ -43,6 +43,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener{
                 binding.getSMSCode.isEnabled = false
                 startCountDown()
             }
+
             R.id.loginButton -> {}
         }
     }

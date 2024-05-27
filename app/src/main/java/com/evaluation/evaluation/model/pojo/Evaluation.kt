@@ -1,6 +1,4 @@
-package com.evaluation.evaluation.database.pojo
-
-import android.provider.ContactsContract
+package com.evaluation.evaluation.model.pojo
 
 data class Evaluation(
     val id: String,
