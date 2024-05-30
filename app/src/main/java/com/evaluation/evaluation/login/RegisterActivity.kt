@@ -17,7 +17,7 @@ class RegisterActivity : BaseActivity() {
     }
 
     companion object {
-        fun actionStart(context: Context) {
+        fun actionStart(context: Context, mobile: String, smsCode: String) {
             val intent = Intent(context, RegisterActivity::class.java)
             context.startActivity(intent)
         }

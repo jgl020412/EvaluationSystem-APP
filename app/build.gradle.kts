@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -56,8 +57,21 @@ dependencies {
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     // https://mvnrepository.com/artifact/com.google.dagger/hilt-android
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt ("com.google.dagger:hilt-android-compiler:2.45")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt ("com.google.dagger:hilt-android-compiler:2.48")
 
+    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-ktx
+    val lifecycleVersion = "2.6.2"
+    api("androidx.recyclerview:recyclerview:1.3.1")
+    api("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    api("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+    api("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
+    api("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+
+
+    val activityVersion = "1.7.2"
+    api ("androidx.activity:activity-ktx:$activityVersion")
+    val fragmentVersion = "1.6.0"
+    api ("androidx.fragment:fragment-ktx:$fragmentVersion")
 
 }

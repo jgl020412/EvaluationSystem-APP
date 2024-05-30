@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface LoginService {
     @GET("/passport/getSMSCode")
-    suspend fun getSMSCode(@Query("mobile") mobile: String)
+    suspend fun getSMSCode(@Query("mobile") mobile: String): BaseModel<Int>
 
     @POST("/passport/isExit")
     suspend fun isExit(@Query("mobile") mobile: String, @Query("smsCode") smsCode: String): BaseModel<UserModel>

@@ -22,16 +22,6 @@
         android:layout_weight="1"
         tools:visibility="visible">
 
-        <ProgressBar
-            android:id="@+id/loginProgressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:indeterminate="true"
-            android:indeterminateTint="@color/white"
-            android:indeterminateTintMode="src_atop"
-            android:visibility="invisible" />
-
         <LinearLayout
             android:id="@+id/loginInputElements"
             android:layout_width="match_parent"

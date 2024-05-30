@@ -6,15 +6,22 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
+import androidx.activity.viewModels
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.base.BaseActivity
 import com.evaluation.evaluation.databinding.ActivityLoginBinding
+import com.evaluation.evaluation.main.MainActivity
+import com.evaluation.evaluation.util.Constants
+import com.evaluation.evaluation.util.SharedPreferenceHelper
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityLoginBinding
     private var countDownTimer: CountDownTimer? = null
     private var timerDuration: Long = 60000 // 倒计时总时长，这里是60秒
+    private val viewModel by viewModels<LoginViewModel>()
     private lateinit var phoneNum: String
     private lateinit var smsCode: String
 
@@ -38,13 +45,27 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+        phoneNum = binding.loginUserNumberEdit.text.toString()
+        smsCode = binding.loginVerificationEdit.text.toString()
         when (v?.id) {
             R.id.getSMSCode -> {
                 binding.getSMSCode.isEnabled = false
                 startCountDown()
+                viewModel.getSMSCode(phoneNum)
             }
 
-            R.id.loginButton -> {}
+            R.id.loginButton -> {
+                viewModel.isExit(phoneNum, smsCode)
+                if (viewModel.userModel.value != null) {
+                    if (viewModel.isRegister.value == true) {
+                        SharedPreferenceHelper.putBoolean(Constants.IS_LOGIN, true)
+                        MainActivity.actionStart(this)
+                    } else {
+                        RegisterActivity.actionStart(this, phoneNum, smsCode)
+                    }
+                    finish()
+                }
+            }
         }
     }
 

@@ -2,6 +2,7 @@ package com.evaluation.evaluation.network.base
 
 import com.evaluation.evaluation.App
 import com.evaluation.evaluation.R
+import com.evaluation.evaluation.util.MLog
 import com.evaluation.evaluation.util.readProperties
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -20,9 +21,8 @@ object ServiceCreator {
     fun <T> create(url: String, service: Class<T>): T = create(url).create(service)
 
     private fun create(url: String): Retrofit {
-        val baseUrl = properties.get("${url}.url")
         return Retrofit.Builder().apply {
-            baseUrl(url)
+            baseUrl(properties["${url}.url"].toString())
             addConverterFactory(GsonConverterFactory.create())
         }.build()
     }
