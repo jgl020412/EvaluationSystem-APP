@@ -7,10 +7,6 @@ import dagger.hilt.android.scopes.ActivityRetainedScoped
 import javax.inject.Inject
 
 @ActivityRetainedScoped
-class LoginRepository @Inject constructor(val application: Application) {
-
-    suspend fun isExit(mobile: String, smsCode: String) = EvaluationNetwork.isExit(mobile, smsCode)
-
-    suspend fun getSMSCode(mobile: String) = EvaluationNetwork.getSMSCode(mobile)
-
+class RegisterRepository @Inject constructor(val application: Application) {
+    suspend fun doRegister(userBO: UserBO) = EvaluationNetwork.doLogin(userBO)
 }

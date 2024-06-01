@@ -16,9 +16,8 @@ class LoginViewModel @Inject constructor(
     application: Application,
     private val loginRepository: LoginRepository
 ) : AndroidViewModel(application) {
-    // TODO 接入登录数据
     private val userState = MutableLiveData<UserModel?>()
-    val userModel: LiveData<UserModel?>
+    val user: LiveData<UserModel?>
         get() = userState
 
     private val _isRegister = MutableLiveData<Boolean>()

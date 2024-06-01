@@ -11,8 +11,10 @@ import com.evaluation.evaluation.R
 import com.evaluation.evaluation.base.BaseActivity
 import com.evaluation.evaluation.databinding.ActivityLoginBinding
 import com.evaluation.evaluation.main.MainActivity
+import com.evaluation.evaluation.model.model.UserModel
 import com.evaluation.evaluation.util.Constants
 import com.evaluation.evaluation.util.SharedPreferenceHelper
+import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -56,9 +58,13 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 
             R.id.loginButton -> {
                 viewModel.isExit(phoneNum, smsCode)
-                if (viewModel.userModel.value != null) {
+                if (viewModel.user.value != null) {
                     if (viewModel.isRegister.value == true) {
                         SharedPreferenceHelper.putBoolean(Constants.IS_LOGIN, true)
+                        SharedPreferenceHelper.putString(
+                            Constants.USER_INFO,
+                            Gson().toJson(viewModel.user.value)
+                        )
                         MainActivity.actionStart(this)
                     } else {
                         RegisterActivity.actionStart(this, phoneNum, smsCode)
