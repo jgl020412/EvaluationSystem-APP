@@ -11,13 +11,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.evaluation.evaluation.App
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.base.BaseActivity
 import com.evaluation.evaluation.databinding.ActivityMyReplyBinding
 import com.evaluation.evaluation.databinding.ActivityReplyBinding
+import com.evaluation.evaluation.eval.reply.ReplyAdapter
 import com.evaluation.evaluation.eval.reply.ReplyViewModel
 import com.evaluation.evaluation.model.model.EvaluationModel
+import com.evaluation.evaluation.util.MLog
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,13 +28,13 @@ import dagger.hilt.android.AndroidEntryPoint
 class MyReplyActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMyReplyBinding
-    private val viewModel by viewModels<ReplyViewModel>()
+    private val viewModel by viewModels<MyReplyViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyReplyBinding.inflate(layoutInflater)
         initData()
-        initView()
+        viewModel.getReplyList{ initView() }
         setContentView(binding.root)
     }
 
@@ -51,6 +54,10 @@ class MyReplyActivity : BaseActivity() {
             binding.evaluationTvTime.text = it.time
             binding.replyListBar.setTitle(it.name)
         }
+        val adapter = ReplyAdapter(viewModel.replyList.value!!)
+        binding.replyRecyclerView.adapter = adapter
+        binding.replyRecyclerView.layoutManager = LinearLayoutManager(App.context)
+        MLog.d(TAG, "${viewModel.replyList.value!!}")
     }
 
     companion object {
@@ -59,6 +66,8 @@ class MyReplyActivity : BaseActivity() {
             intent.putExtra("evaluation", Gson().toJson(evaluationViewModel))
             context.startActivity(intent)
         }
+
+        private const val TAG = "MyReplyActivity"
     }
 
 }

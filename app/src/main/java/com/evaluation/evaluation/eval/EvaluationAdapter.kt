@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.evaluation.evaluation.App
 import com.evaluation.evaluation.App.Companion.context
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.model.pojo.Evaluation
@@ -24,7 +25,7 @@ class EvaluationAdapter(private val evaluationList: List<EvaluationModel>) :
         val holder = EvaluationHolder(binding)
         binding.root.setOnClickListener {
             val index = holder.adapterPosition
-            ReplyActivity.actionStart(binding.root.context, evaluationList[index])
+            ReplyActivity.actionStart(App.context, evaluationList[index])
         }
         return holder
     }

@@ -2,6 +2,7 @@ package com.evaluation.evaluation.network.service
 
 import com.evaluation.evaluation.model.model.BaseModel
 import com.evaluation.evaluation.model.model.EvaluationModel
+import com.evaluation.evaluation.model.model.ReplyModel
 import com.evaluation.evaluation.model.pojo.EvaluationBO
 import retrofit2.Call
 import retrofit2.http.Body
@@ -19,5 +20,8 @@ interface EvaluationService {
 
     @POST("/evaluation/createEvaluation")
     fun createEvaluation(@Body evaluationBO: EvaluationBO): Call<BaseModel<Int>>
+
+    @GET("/reply/getReplies")
+    fun getReplies(@Query("evaluationId") evaluationId: String): Call<BaseModel<List<ReplyModel>>>
 
 }

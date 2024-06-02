@@ -33,6 +33,8 @@ object EvaluationNetwork {
 
     fun createEvaluation(evaluationBO: EvaluationBO) = evaluationService.createEvaluation(evaluationBO)
 
+    fun getReplies(evaluationId: String) = evaluationService.getReplies(evaluationId)
+
 
     /* 有关用户信息的服务 */
 
