@@ -10,6 +10,7 @@ import com.evaluation.evaluation.R
 import com.evaluation.evaluation.base.ActivityCollector
 import com.evaluation.evaluation.model.pojo.User
 import com.evaluation.evaluation.databinding.FragmentUserBinding
+import com.evaluation.evaluation.profile.update.UpdateUserInfoActivity
 import com.evaluation.evaluation.util.Constants
 import com.evaluation.evaluation.util.SharedPreferenceHelper
 import com.google.gson.Gson
@@ -72,6 +73,7 @@ class UserFragment: Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.profileUpdate -> {
+                UpdateUserInfoActivity.actionStart(this.requireContext())
             }
             R.id.profileBtnLogout -> {
                 SharedPreferenceHelper.putBoolean(Constants.IS_LOGIN, false)
