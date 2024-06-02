@@ -58,6 +58,10 @@ class MyReplyActivity : BaseActivity() {
         binding.replyRecyclerView.adapter = adapter
         binding.replyRecyclerView.layoutManager = LinearLayoutManager(App.context)
         MLog.d(TAG, "${viewModel.replyList.value!!}")
+        binding.replyButton.setOnClickListener {
+            viewModel.content.value = binding.replyEdit.text.toString()
+            viewModel.createReply()
+        }
     }
 
     companion object {

@@ -1,6 +1,7 @@
 package com.evaluation.evaluation.network.base
 
 import com.evaluation.evaluation.model.pojo.EvaluationBO
+import com.evaluation.evaluation.model.pojo.NewReplyBO
 import com.evaluation.evaluation.model.pojo.User
 import com.evaluation.evaluation.model.pojo.UserBO
 import com.evaluation.evaluation.network.service.EvaluationService
@@ -34,6 +35,8 @@ object EvaluationNetwork {
     fun createEvaluation(evaluationBO: EvaluationBO) = evaluationService.createEvaluation(evaluationBO)
 
     fun getReplies(evaluationId: String) = evaluationService.getReplies(evaluationId)
+
+    fun createReply(newReplyBO: NewReplyBO) = evaluationService.createReply(newReplyBO)
 
 
     /* 有关用户信息的服务 */
