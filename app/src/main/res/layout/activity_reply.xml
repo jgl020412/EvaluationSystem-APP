@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".service.ServiceFragment">
+
+    <com.evaluation.evaluation.main.TitleBar
+        android:id="@+id/reply_list_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/evaluationContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:text="评价内容"
+        android:padding="@dimen/dp_4"
+        android:textSize="@dimen/sp_20"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_8"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="3" />
+
+    <TextView
+        android:id="@+id/evaluationTvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_5"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/sp_13"
+        tools:ignore="RelativeOverlap"
+        tools:text="发布时间" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/replyRecyclerView"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -11,6 +11,7 @@ import com.evaluation.evaluation.App.Companion.context
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.model.pojo.Evaluation
 import com.evaluation.evaluation.databinding.AdapterEvaluationBinding
+import com.evaluation.evaluation.eval.reply.ReplyActivity
 import com.evaluation.evaluation.model.model.EvaluationModel
 
 class EvaluationAdapter(private val evaluationList: List<EvaluationModel>) :
@@ -20,7 +21,12 @@ class EvaluationAdapter(private val evaluationList: List<EvaluationModel>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EvaluationHolder {
         val binding = AdapterEvaluationBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return EvaluationHolder(binding)
+        val holder = EvaluationHolder(binding)
+        binding.root.setOnClickListener {
+            val index = holder.adapterPosition
+            ReplyActivity.actionStart(binding.root.context, evaluationList[index])
+        }
+        return holder
     }
 
     override fun getItemCount(): Int = evaluationList.size
