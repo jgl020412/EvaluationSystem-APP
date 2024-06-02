@@ -7,7 +7,9 @@ import com.evaluation.evaluation.base.BaseActivity
 import com.evaluation.evaluation.databinding.ActivityMainBinding
 import com.evaluation.evaluation.model.model.UserModel
 import com.evaluation.evaluation.model.pojo.User
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity: BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding

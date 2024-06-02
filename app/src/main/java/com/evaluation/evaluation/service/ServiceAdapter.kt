@@ -1,5 +1,6 @@
 package com.evaluation.evaluation.service
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.model.entity.Service
+import com.evaluation.evaluation.model.model.ServiceModel
 
-class ServiceAdapter(val serviceList: List<Service>) :
+class ServiceAdapter(val serviceList: List<ServiceModel>) :
     RecyclerView.Adapter<ServiceAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -19,7 +21,16 @@ class ServiceAdapter(val serviceList: List<Service>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.adapter_service, parent, false)
-        return ViewHolder(view)
+        val viewHolder = ViewHolder(view)
+        view.setOnClickListener {
+            val index = viewHolder.adapterPosition
+            AlertDialog.Builder(view.context).apply {
+                setTitle(serviceList[index].name)
+                setMessage(serviceList[index].details)
+                show()
+            }
+        }
+        return viewHolder
     }
 
     override fun getItemCount(): Int = serviceList.size

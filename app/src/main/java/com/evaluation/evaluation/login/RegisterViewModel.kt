@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.evaluation.evaluation.base.http
 import com.evaluation.evaluation.model.model.UserModel
-import com.evaluation.evaluation.model.pojo.User
 import com.evaluation.evaluation.model.pojo.UserBO
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -21,9 +20,9 @@ class RegisterViewModel @Inject constructor(
 
     val userContent = MutableLiveData<UserBO>()
 
-    private val userModel = MutableLiveData<UserModel>()
+    private val userModel = MutableLiveData<UserModel?>()
 
-    val user: LiveData<UserModel>
+    val user: LiveData<UserModel?>
         get() = userModel
 
     fun register() {

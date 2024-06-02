@@ -21,7 +21,7 @@ fun <T> CoroutineScope.http(
     showToast: Boolean = true
 
 ): Job {
-    return this.launch() {
+    return this.launch {
         try {
             val result = request()
             if (result.status == 200) {
