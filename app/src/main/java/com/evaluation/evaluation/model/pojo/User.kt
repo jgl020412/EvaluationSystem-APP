@@ -2,16 +2,16 @@ package com.evaluation.evaluation.model.pojo
 
 data class User(
     val id: String,
-    val name: String,
-    val password: String,
-    val phoneNum: String,
-    val mail: String,
-    val idNum: String,
-    val job: String,
-    val sex: Int,
-    val birthday: String,
-    val province: String,
-    val city: String,
-    val district: String,
-    val status: Int
+    var name: String,
+    var password: String,
+    var phoneNum: String,
+    var mail: String,
+    var idNum: String,
+    var job: String,
+    var sex: Int,
+    var birthday: String,
+    var province: String,
+    var city: String,
+    var district: String,
+    var status: Int
 )

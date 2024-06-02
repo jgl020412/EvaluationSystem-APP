@@ -1,11 +1,13 @@
 package com.evaluation.evaluation.profile
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.evaluation.evaluation.App
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.base.ActivityCollector
 import com.evaluation.evaluation.model.pojo.User
@@ -15,7 +17,7 @@ import com.evaluation.evaluation.util.Constants
 import com.evaluation.evaluation.util.SharedPreferenceHelper
 import com.google.gson.Gson
 
-class UserFragment: Fragment(), View.OnClickListener {
+class UserFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentUserBinding
 
@@ -55,9 +57,14 @@ class UserFragment: Fragment(), View.OnClickListener {
 
     @SuppressLint("SetTextI18n")
     private fun initData() {
-        user = Gson().fromJson(SharedPreferenceHelper.loadStr(Constants.USER_INFO, Gson().toJson(user)), User::class.java)
+        user = Gson().fromJson(
+            SharedPreferenceHelper.loadStr(
+                Constants.USER_INFO,
+                Gson().toJson(user)
+            ), User::class.java
+        )
         binding.profileTvName.text = user.name
-        binding.profileTvCity.text = "${ user.province }  ${ user.city }  ${ user.district }"
+        binding.profileTvCity.text = "${user.province}  ${user.city}  ${user.district}"
         binding.tvPhoneNum.text = user.phoneNum
         binding.tvSex.text = if (user.sex == 0) "女" else "男"
         binding.tvJob.text = user.job
@@ -73,8 +80,11 @@ class UserFragment: Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.profileUpdate -> {
-                UpdateUserInfoActivity.actionStart(this.requireContext())
+                activity?.let {
+                    UpdateUserInfoActivity.actionStart(it)
+                }
             }
+
             R.id.profileBtnLogout -> {
                 SharedPreferenceHelper.putBoolean(Constants.IS_LOGIN, false)
                 ActivityCollector.finishAll()

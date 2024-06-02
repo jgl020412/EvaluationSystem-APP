@@ -1,10 +1,12 @@
 package com.evaluation.evaluation.network.base
 
 import com.evaluation.evaluation.model.pojo.EvaluationBO
+import com.evaluation.evaluation.model.pojo.User
 import com.evaluation.evaluation.model.pojo.UserBO
 import com.evaluation.evaluation.network.service.EvaluationService
 import com.evaluation.evaluation.network.service.LoginService
 import com.evaluation.evaluation.network.service.ServService
+import com.evaluation.evaluation.network.service.UserService
 
 object EvaluationNetwork {
 
@@ -30,5 +32,12 @@ object EvaluationNetwork {
     fun getMyEvaluation(userId: String) = evaluationService.getMyEvaluation(userId);
 
     fun createEvaluation(evaluationBO: EvaluationBO) = evaluationService.createEvaluation(evaluationBO)
+
+
+    /* 有关用户信息的服务 */
+
+    private val userService = ServiceCreator.create("user", UserService::class.java)
+
+    fun updateUserInfo(user: User) = userService.updateUserInfo(user)
 
 }
