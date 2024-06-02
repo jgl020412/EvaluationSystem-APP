@@ -5,13 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.evaluation.evaluation.model.pojo.Evaluation
 import com.evaluation.evaluation.databinding.FragmentEvaluationBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MyEvaluationFragment: Fragment() {
 
     private lateinit var binding: FragmentEvaluationBinding
+    private val viewModel by viewModels<MyEvaluationViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,12 +23,12 @@ class MyEvaluationFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentEvaluationBinding.inflate(inflater, container, false)
-        initView()
+        viewModel.getMyEvaluation { initView() }
         return binding.root
     }
 
     private fun initView() {
-        val evaluationAdapter = MyEvaluationAdapter(testInitEvaluationList())
+        val evaluationAdapter = MyEvaluationAdapter(viewModel.evaluationList.value!!)
         val evaluationRecyclerView = binding.evaluationRecyclerView
         evaluationRecyclerView.adapter = evaluationAdapter
         evaluationRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -34,50 +38,6 @@ class MyEvaluationFragment: Fragment() {
 
     companion object {
         fun newInstance() = MyEvaluationFragment()
-    }
-
-    private fun testInitEvaluationList(): List<Evaluation> {
-        val evaluationList = ArrayList<Evaluation>()
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        evaluationList.add(Evaluation("id10", "这里应该存放服务的名字", "1000", "满分", 3, "2020-12-12"))
-        return evaluationList
     }
 
 }

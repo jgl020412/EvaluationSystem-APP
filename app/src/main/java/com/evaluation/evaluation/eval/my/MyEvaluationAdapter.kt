@@ -9,10 +9,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.evaluation.evaluation.App.Companion.context
 import com.evaluation.evaluation.R
-import com.evaluation.evaluation.model.pojo.Evaluation
 import com.evaluation.evaluation.databinding.AdapterEvaluationBinding
+import com.evaluation.evaluation.model.model.EvaluationModel
 
-class MyEvaluationAdapter(private val evaluationList: List<Evaluation>) :
+class MyEvaluationAdapter(private val evaluationList: List<EvaluationModel>) :
     RecyclerView.Adapter<MyEvaluationAdapter.EvaluationHolder>() {
     inner class EvaluationHolder(val binding: AdapterEvaluationBinding): RecyclerView.ViewHolder(binding.root) {
     }
@@ -28,7 +28,7 @@ class MyEvaluationAdapter(private val evaluationList: List<Evaluation>) :
     override fun onBindViewHolder(holder: EvaluationHolder, position: Int) {
         val evaluation = evaluationList[position]
         holder.binding.evaluationTvUser.text = "我的"
-        holder.binding.serviceTvTitle.text = evaluation.serviceId
+        holder.binding.serviceTvTitle.text = evaluation.name
         holder.binding.evaluationTvTime.text = evaluation.time
         holder.binding.ratingBar.rating = evaluation.level.toFloat()
         val star = holder.binding.ratingBar.progressDrawable as LayerDrawable
