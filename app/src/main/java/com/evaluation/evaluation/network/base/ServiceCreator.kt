@@ -11,7 +11,7 @@ import java.util.Properties
 
 object ServiceCreator {
 
-    private var properties: Properties
+    var properties: Properties
 
     init {
         val openRawResource = App.context.resources

@@ -18,6 +18,6 @@ object EvaluationNetwork {
 
     private val servService = ServiceCreator.create("admin", ServService::class.java)
 
-    suspend fun getServices() = servService.getServiceList()
+    fun getServices() = servService.getServiceList()
 
 }

@@ -12,9 +12,16 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.evaluation.evaluation.databinding.FragmentServiceBinding
 import com.evaluation.evaluation.model.entity.Service
+import com.evaluation.evaluation.model.model.BaseModel
 import com.evaluation.evaluation.model.model.ServiceModel
+import com.evaluation.evaluation.network.service.ServService
 import com.evaluation.evaluation.util.MLog
 import dagger.hilt.android.AndroidEntryPoint
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 @AndroidEntryPoint
@@ -29,21 +36,13 @@ class ServiceFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentServiceBinding.inflate(inflater, container, false)
-        val handler: Handler = Handler(Looper.getMainLooper())
-
-        viewModel.getServiceList()
-
-        initView()
+        viewModel.getServiceList { initView() }
         return binding.root
     }
 
     private fun initView() {
-        var serviceAdapter: ServiceAdapter
-        if (viewModel.serviceList.value != null) {
-            serviceAdapter = ServiceAdapter(viewModel.serviceList.value!!)
-        } else {
-            serviceAdapter = ServiceAdapter(testInitService())
-        }
+        val serviceAdapter = ServiceAdapter(viewModel.serviceList.value!!);
+        MLog.d(TAG, "${viewModel.serviceList.value}")
         binding.serviceRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.serviceRecyclerView.adapter = serviceAdapter
         binding.serviceListBar.setBackImageVisible(false)
