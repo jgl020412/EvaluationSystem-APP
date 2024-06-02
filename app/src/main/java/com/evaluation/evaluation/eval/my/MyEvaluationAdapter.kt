@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.evaluation.evaluation.App.Companion.context
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.databinding.AdapterEvaluationBinding
-import com.evaluation.evaluation.eval.reply.ReplyActivity
+import com.evaluation.evaluation.eval.reply.my.MyReplyActivity
 import com.evaluation.evaluation.model.model.EvaluationModel
 
 class MyEvaluationAdapter(private val evaluationList: List<EvaluationModel>) :
@@ -23,7 +23,7 @@ class MyEvaluationAdapter(private val evaluationList: List<EvaluationModel>) :
         val holder = EvaluationHolder(binding)
         binding.root.setOnClickListener {
             val index = holder.adapterPosition
-            ReplyActivity.actionStart(binding.root.context, evaluationList[index])
+            MyReplyActivity.actionStart(binding.root.context, evaluationList[index])
         }
         return holder
     }

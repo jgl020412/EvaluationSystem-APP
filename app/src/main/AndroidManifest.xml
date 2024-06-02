@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".eval.reply.my.MyReplyActivity"
+            android:exported="false" />
+        <activity
             android:name=".eval.reply.ReplyActivity"
             android:exported="false" />
         <activity
