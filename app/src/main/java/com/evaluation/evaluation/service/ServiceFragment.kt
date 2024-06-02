@@ -55,41 +55,4 @@ class ServiceFragment : Fragment() {
         private const val TAG = "ServiceFragment"
     }
 
-    private fun testInitService(): List<ServiceModel> {
-        val serviceList = ArrayList<ServiceModel>()
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        serviceList.add(ServiceModel("1001", "服务名字仅仅是测试", "部门名字测试用", "暂时没有详细内容"))
-        return serviceList
-    }
-
 }
