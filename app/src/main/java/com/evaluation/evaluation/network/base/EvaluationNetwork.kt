@@ -1,5 +1,6 @@
 package com.evaluation.evaluation.network.base
 
+import com.evaluation.evaluation.model.pojo.EvaluationBO
 import com.evaluation.evaluation.model.pojo.UserBO
 import com.evaluation.evaluation.network.service.EvaluationService
 import com.evaluation.evaluation.network.service.LoginService
@@ -27,5 +28,7 @@ object EvaluationNetwork {
     fun getAllEvaluation() = evaluationService.getAllEvaluation()
 
     fun getMyEvaluation(userId: String) = evaluationService.getMyEvaluation(userId);
+
+    fun createEvaluation(evaluationBO: EvaluationBO) = evaluationService.createEvaluation(evaluationBO)
 
 }

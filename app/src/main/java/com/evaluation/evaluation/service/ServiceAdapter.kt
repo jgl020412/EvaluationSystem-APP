@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.evaluation.evaluation.R
+import com.evaluation.evaluation.eval.add.AddEvaluationActivity
 import com.evaluation.evaluation.model.entity.Service
 import com.evaluation.evaluation.model.model.ServiceModel
 
@@ -24,11 +25,7 @@ class ServiceAdapter(val serviceList: List<ServiceModel>) :
         val viewHolder = ViewHolder(view)
         view.setOnClickListener {
             val index = viewHolder.adapterPosition
-            AlertDialog.Builder(view.context).apply {
-                setTitle(serviceList[index].name)
-                setMessage(serviceList[index].details)
-                show()
-            }
+            AddEvaluationActivity.actionStart(view.context, serviceList[index])
         }
         return viewHolder
     }

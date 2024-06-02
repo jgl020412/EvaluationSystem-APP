@@ -21,5 +21,11 @@
     <string name="welcomeTittle">政务服务好差评系统</string>
     <string name="welcomeGreeting">欢迎使用</string>
     <string name="welcomePrompt"><![CDATA[“恶语伤人三春寒，良言一句暖三冬”]]></string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="EvaluationPrompts">请输入你的评价内容\n恶语伤人三春寒，良言一句暖三冬\n不要虚假评价</string>
 
 </resources>
