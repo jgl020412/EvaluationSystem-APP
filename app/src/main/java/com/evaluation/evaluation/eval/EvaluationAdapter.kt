@@ -25,7 +25,7 @@ class EvaluationAdapter(private val evaluationList: List<EvaluationModel>) :
         val holder = EvaluationHolder(binding)
         binding.root.setOnClickListener {
             val index = holder.adapterPosition
-            ReplyActivity.actionStart(App.context, evaluationList[index])
+            ReplyActivity.actionStart(parent.context, evaluationList[index])
         }
         return holder
     }

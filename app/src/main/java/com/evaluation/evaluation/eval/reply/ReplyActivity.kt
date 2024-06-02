@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.evaluation.evaluation.App
 import com.evaluation.evaluation.R
 import com.evaluation.evaluation.base.BaseActivity
@@ -30,7 +31,7 @@ class ReplyActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityReplyBinding.inflate(layoutInflater)
         initData()
-        initView()
+        viewModel.getReplyList{ initView() }
         setContentView(binding.root)
     }
 
@@ -50,6 +51,9 @@ class ReplyActivity : BaseActivity() {
             binding.evaluationTvTime.text = it.time
             binding.replyListBar.setTitle(it.name)
         }
+        val adapter = ReplyAdapter(viewModel.replyList.value!!)
+        binding.replyRecyclerView.adapter = adapter
+        binding.replyRecyclerView.layoutManager = LinearLayoutManager(App.context)
     }
 
     companion object {
